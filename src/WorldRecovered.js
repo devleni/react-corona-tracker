@@ -39,7 +39,7 @@ class WorldRecovered extends Component {
   render() {
     return (
       <div className="WorldRecovered">
-        <h2>Recovered</h2>
+        <h3>Recovered</h3>
         <p>0</p>
       </div>
     )

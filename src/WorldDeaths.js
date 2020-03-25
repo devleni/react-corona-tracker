@@ -39,7 +39,7 @@ class WorldDeaths extends Component {
   render() {
     return (
       <div className="WorldDeaths">
-        <h2>Deaths</h2>
+        <h3>Deaths</h3>
         <p>0</p>
       </div>
     )

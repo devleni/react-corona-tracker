@@ -39,7 +39,7 @@ class WorldInfected extends Component {
   render() {
     return (
       <div className="WorldInfected">
-        <h2>Infected</h2>
+        <h3>Infected</h3>
         <p>0</p>
       </div>
     )

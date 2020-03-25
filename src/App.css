@@ -1,17 +1,26 @@
 body {
   margin: 0 auto;
   width: 100%;
-  background: black;
+  background: #1a1a1a;
   color: white;
 }
 
 h1 {
   font-family: 'Share Tech Mono', monospace;
   font-size: 3rem;
+  text-align: center;
+  text-shadow: crimson 1px 0 10px;
   text-transform: uppercase;
 }
 
-p, h2 {
+h2 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p, h3 {
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
 }

@@ -42,12 +42,12 @@ class WorldStats extends Component {
   render() {
     return (
       <div className="WorldStatsContainer">
-        <h1>World Statistics</h1>
-          <div className="WorldDataContainer">
-            <WorldInfected />
-            <WorldRecovered />
-            <WorldDeaths />
-          </div>
+        <h2>WORLDWIDE</h2>
+        <div className="WorldDataContainer">
+          <WorldInfected />
+          <WorldRecovered />
+          <WorldDeaths />
+        </div>
       </div>
     )
   }
