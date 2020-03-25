@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import WorldInfected from "./WorldInfected";
-import WorldRecovered from "./WorldRecovered";
-import WorldDeaths from "./WorldDeaths";
-import "./WorldStats.css";
+import "./WorldDeaths.css";
 
-class WorldStats extends Component {
+class WorldDeaths extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,16 +38,12 @@ class WorldStats extends Component {
 
   render() {
     return (
-      <div className="WorldStatsContainer">
-        <h1>World Statistics</h1>
-          <div className="WorldDataContainer">
-            <WorldInfected />
-            <WorldRecovered />
-            <WorldDeaths />
-          </div>
+      <div className="WorldDeaths">
+        <h2>Deaths</h2>
+        <p>0</p>
       </div>
     )
   }
 }
 
-export default WorldStats;
+export default WorldDeaths;

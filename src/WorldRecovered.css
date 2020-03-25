@@ -1,0 +1,9 @@
+.WorldRecovered {
+  background: white;
+  color: black;
+  border-style: none;
+  margin: 1rem;
+  padding: 1rem;
+  width: 25vw;
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.75);
+}
