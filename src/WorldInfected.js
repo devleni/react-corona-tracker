@@ -7,7 +7,7 @@ class WorldInfected extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      result: []
     }; 
   }
 
@@ -23,8 +23,9 @@ class WorldInfected extends Component {
       .then(
         (result) => {
           this.setState({
+            error: null,
             isLoaded: true,
-            items: result.items
+            result: result
           });
         },
         (error) => {
@@ -37,10 +38,12 @@ class WorldInfected extends Component {
   }
 
   render() {
+    const { error, isLoaded, result } = this.state;
     return (
       <div className="WorldInfected">
         <h3>Infected</h3>
-        <p>0</p>
+        {error ? <p>{error.message}</p> : null}
+        {isLoaded ? <p>{result.map(r => r.confirmed)}</p> : <p>Loading...</p>}
       </div>
     )
   }
