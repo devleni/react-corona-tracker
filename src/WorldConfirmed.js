@@ -12,10 +12,10 @@ class WorldConfirmed extends Component {
   }
 
   componentDidMount() {
-    fetch("https://covid-19-data.p.rapidapi.com/totals?format=json", {
+    fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+        "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
         "x-rapidapi-key": "8ef55b2526mshfdc06b3fd66166dp16780ejsn5c0635d72882"
       }
     })
@@ -25,7 +25,7 @@ class WorldConfirmed extends Component {
           this.setState({
             error: null,
             isLoaded: true,
-            result: result
+            result: this.state.result.concat(result)
           });
         },
         (error) => {
@@ -39,11 +39,12 @@ class WorldConfirmed extends Component {
 
   render() {
     const { error, isLoaded, result } = this.state;
+    console.log(result)
     return (
       <div className="WorldConfirmed">
         <img src="/virus.png" alt="" />
         {error ? <p>{error.message}</p> : null}
-        {isLoaded ? <p>{result.map(r => r.confirmed)}</p> : <p><img src="loading.gif" alt="" /></p>}
+        {isLoaded ? <p>{result.map(r => r.total_cases)}</p> : <p><img src="loading.gif" alt="" /></p>}
         <h3>Confirmed</h3>       
       </div>
     )

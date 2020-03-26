@@ -12,10 +12,10 @@ class WorldDeaths extends Component {
   }
 
   componentDidMount() {
-    fetch("https://covid-19-data.p.rapidapi.com/totals?format=json", {
+    fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+        "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
         "x-rapidapi-key": "8ef55b2526mshfdc06b3fd66166dp16780ejsn5c0635d72882"
       }
     })
@@ -23,8 +23,9 @@ class WorldDeaths extends Component {
       .then(
         (result) => {
           this.setState({
+            error: null,
             isLoaded: true,
-            result: result
+            result: this.state.result.concat(result)
           });
         },
         (error) => {
@@ -42,7 +43,7 @@ class WorldDeaths extends Component {
       <div className="WorldDeaths">
         <img src="/cross.png" alt="" />
         {error ? <p>{error.message}</p> : null}
-        {isLoaded ? <p>{result.map(r => r.deaths)}</p> : <p><img src="loading.gif" alt="" /></p>}
+        {isLoaded ? <p>{result.map(r => r.total_deaths)}</p> : <p><img src="loading.gif" alt="" /></p>}
         <h3>Deaths</h3>        
       </div>
     )
