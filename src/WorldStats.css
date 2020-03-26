@@ -1,7 +1,7 @@
 .WorldStatsContainer {
   background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #2F333D, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2F333D, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 1rem;
   padding-bottom: 1.25rem;
   display: flex;
@@ -11,6 +11,7 @@
   text-align: center;
   border-style: none;
   border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.75);
 }
 
 .WorldDataContainer {

@@ -7,7 +7,7 @@ class WorldRecovered extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      result: []
     }; 
   }
 
@@ -24,7 +24,7 @@ class WorldRecovered extends Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            result: result
           });
         },
         (error) => {
@@ -37,11 +37,14 @@ class WorldRecovered extends Component {
   }
 
   render() {
+    const { error, isLoaded, result } = this.state;
     return (
       <div className="WorldRecovered">
+        <img src="/heart.png" alt="" />
+        { error ? <p>{error.message}</p> : null}
+        {isLoaded ? <p>{result.map(r => r.recovered)}</p> : <p><img src="loading.gif" alt="" /></p>}
         <h3>Recovered</h3>
-        <p>0</p>
-      </div>
+        </div>
     )
   }
 }

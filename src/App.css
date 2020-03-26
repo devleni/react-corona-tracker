@@ -1,14 +1,14 @@
 body {
   margin: 0 auto;
   width: 100%;
-  background: #f2f2f2;
-  color: white;
+  background: #494F5C;
+  color: #f2f2f2;
 }
 
 h1 {
-  color: black;
+  color: #f2f2f2;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
   text-shadow: crimson 1px 0 10px;
   text-transform: uppercase;
@@ -16,12 +16,17 @@ h1 {
 
 h2 {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
 }
 
-p, h3 {
+h3 {
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
 }

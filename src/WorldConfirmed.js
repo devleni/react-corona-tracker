@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./WorldInfected.css";
+import "./WorldConfirmed.css";
 
-class WorldInfected extends Component {
+class WorldConfirmed extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,13 +40,14 @@ class WorldInfected extends Component {
   render() {
     const { error, isLoaded, result } = this.state;
     return (
-      <div className="WorldInfected">
-        <h3>Infected</h3>
+      <div className="WorldConfirmed">
+        <img src="/virus.png" alt="" />
         {error ? <p>{error.message}</p> : null}
-        {isLoaded ? <p>{result.map(r => r.confirmed)}</p> : <p>Loading...</p>}
+        {isLoaded ? <p>{result.map(r => r.confirmed)}</p> : <p><img src="loading.gif" alt="" /></p>}
+        <h3>Confirmed</h3>       
       </div>
     )
   }
 }
 
-export default WorldInfected;
+export default WorldConfirmed;

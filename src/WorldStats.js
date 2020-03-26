@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import WorldInfected from "./WorldInfected";
+import WorldConfirmed from "./WorldConfirmed";
 import WorldRecovered from "./WorldRecovered";
 import WorldDeaths from "./WorldDeaths";
 import "./WorldStats.css";
@@ -44,7 +44,7 @@ class WorldStats extends Component {
       <div className="WorldStatsContainer">
         <h2>WORLDWIDE</h2>
         <div className="WorldDataContainer">
-          <WorldInfected />
+          <WorldConfirmed />
           <WorldRecovered />
           <WorldDeaths />
         </div>

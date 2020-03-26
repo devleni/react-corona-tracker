@@ -7,7 +7,7 @@ class WorldDeaths extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      result: []
     }; 
   }
 
@@ -24,7 +24,7 @@ class WorldDeaths extends Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            result: result
           });
         },
         (error) => {
@@ -37,10 +37,13 @@ class WorldDeaths extends Component {
   }
 
   render() {
-    return (
+    const { error, isLoaded, result } = this.state;
+    return (      
       <div className="WorldDeaths">
-        <h3>Deaths</h3>
-        <p>0</p>
+        <img src="/cross.png" alt="" />
+        {error ? <p>{error.message}</p> : null}
+        {isLoaded ? <p>{result.map(r => r.deaths)}</p> : <p><img src="loading.gif" alt="" /></p>}
+        <h3>Deaths</h3>        
       </div>
     )
   }
