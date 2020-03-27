@@ -83,9 +83,39 @@ class CountryGraph extends Component {
 		const activeCases13 = parseInt(result.map(r => r.countries_stat[12].active_cases).toString().split(",").join(""));
 		const activeCases14 = parseInt(result.map(r => r.countries_stat[13].active_cases).toString().split(",").join(""));
 		const activeCases15 = parseInt(result.map(r => r.countries_stat[14].active_cases).toString().split(",").join(""));
-
+		const totalRecovered1 = parseInt(result.map(r => r.countries_stat[0].total_recovered).toString().split(",").join(""));
+		const totalRecovered2 = parseInt(result.map(r => r.countries_stat[1].total_recovered).toString().split(",").join(""));
+		const totalRecovered3 = parseInt(result.map(r => r.countries_stat[2].total_recovered).toString().split(",").join(""));
+		const totalRecovered4 = parseInt(result.map(r => r.countries_stat[3].total_recovered).toString().split(",").join(""));
+		const totalRecovered5 = parseInt(result.map(r => r.countries_stat[4].total_recovered).toString().split(",").join(""));
+		const totalRecovered6 = parseInt(result.map(r => r.countries_stat[5].total_recovered).toString().split(",").join(""));
+		const totalRecovered7 = parseInt(result.map(r => r.countries_stat[6].total_recovered).toString().split(",").join(""));
+		const totalRecovered8 = parseInt(result.map(r => r.countries_stat[7].total_recovered).toString().split(",").join(""));
+		const totalRecovered9 = parseInt(result.map(r => r.countries_stat[8].total_recovered).toString().split(",").join(""));
+		const totalRecovered10 = parseInt(result.map(r => r.countries_stat[9].total_recovered).toString().split(",").join(""));
+		const totalRecovered11 = parseInt(result.map(r => r.countries_stat[10].total_recovered).toString().split(",").join(""));
+		const totalRecovered12 = parseInt(result.map(r => r.countries_stat[11].total_recovered).toString().split(",").join(""));
+		const totalRecovered13 = parseInt(result.map(r => r.countries_stat[12].total_recovered).toString().split(",").join(""));
+		const totalRecovered14 = parseInt(result.map(r => r.countries_stat[13].total_recovered).toString().split(",").join(""));
+		const totalRecovered15 = parseInt(result.map(r => r.countries_stat[14].total_recovered).toString().split(",").join(""));
+		const totalDeaths1 = parseInt(result.map(r => r.countries_stat[0].deaths).toString().split(",").join(""));
+		const totalDeaths2 = parseInt(result.map(r => r.countries_stat[1].deaths).toString().split(",").join(""));
+		const totalDeaths3 = parseInt(result.map(r => r.countries_stat[2].deaths).toString().split(",").join(""));
+		const totalDeaths4 = parseInt(result.map(r => r.countries_stat[3].deaths).toString().split(",").join(""));
+		const totalDeaths5 = parseInt(result.map(r => r.countries_stat[4].deaths).toString().split(",").join(""));
+		const totalDeaths6 = parseInt(result.map(r => r.countries_stat[5].deaths).toString().split(",").join(""));
+		const totalDeaths7 = parseInt(result.map(r => r.countries_stat[6].deaths).toString().split(",").join(""));
+		const totalDeaths8 = parseInt(result.map(r => r.countries_stat[7].deaths).toString().split(",").join(""));
+		const totalDeaths9 = parseInt(result.map(r => r.countries_stat[8].deaths).toString().split(",").join(""));
+		const totalDeaths10 = parseInt(result.map(r => r.countries_stat[9].deaths).toString().split(",").join(""));
+		const totalDeaths11 = parseInt(result.map(r => r.countries_stat[10].deaths).toString().split(",").join(""));
+		const totalDeaths12 = parseInt(result.map(r => r.countries_stat[11].deaths).toString().split(",").join(""));
+		const totalDeaths13 = parseInt(result.map(r => r.countries_stat[12].deaths).toString().split(",").join(""));
+		const totalDeaths14 = parseInt(result.map(r => r.countries_stat[13].deaths).toString().split(",").join(""));
+		const totalDeaths15 = parseInt(result.map(r => r.countries_stat[14].deaths).toString().split(",").join(""));
 
 		const options = {
+			height: 600,			
 			animationEnabled: true,
 			theme: "light2",			
 			axisX: {
@@ -131,13 +161,21 @@ class CountryGraph extends Component {
 				showInLegend: "true",
 				yValueFormatString: "#",
 				dataPoints: [
-					{ label: "France", y: 3900 },
-					{ label: "Iran", y: 10457  },
-					{ label: "Germany", y: 3547 },
-					{ label: "Spain", y: 7015 },
-					{ label: "USA", y: 428 },
-					{ label: "Italy", y: 9362 },
-					{ label: "China", y: 74051 }
+					{ label: countryName15, y: totalRecovered15, color: "lightgreen" },
+					{ label: countryName14, y: totalRecovered14, color: "lightgreen" },
+					{ label: countryName13, y: totalRecovered13, color: "lightgreen" },
+					{ label: countryName12, y: totalRecovered12, color: "lightgreen" },
+					{ label: countryName11, y: totalRecovered11, color: "lightgreen" },
+					{ label: countryName10, y: totalRecovered10, color: "lightgreen" },
+					{ label: countryName9, y: totalRecovered9, color: "lightgreen" },
+					{ label: countryName8, y: totalRecovered8, color: "lightgreen" },
+					{ label: countryName7, y: totalRecovered7, color: "lightgreen" },
+					{ label: countryName6, y: totalRecovered6, color: "lightgreen" },
+					{ label: countryName5, y: totalRecovered5, color: "lightgreen" },
+					{ label: countryName4, y: totalRecovered4, color: "lightgreen" },
+					{ label: countryName3, y: totalRecovered3, color: "lightgreen" },
+					{ label: countryName2, y: totalRecovered2, color: "lightgreen" },
+					{ label: countryName1, y: totalRecovered1, color: "lightgreen" }
 				]
 			},
 			{
@@ -146,13 +184,21 @@ class CountryGraph extends Component {
 				showInLegend: "true",
 				yValueFormatString: "#",
 				dataPoints: [
-					{ label: "France", y: 1331, color: "#333333" },
-					{ label: "Iran", y: 2234, color: "#333333" },
-					{ label: "Germany", y: 222, color: "#333333" },
-					{ label: "Spain", y: 4089, color: "#333333" },
-					{ label: "USA", y: 1036, color: "#333333" },
-					{ label: "Italy", y: 7503, color: "#333333" },
-					{ label: "China", y: 3287, color: "#333333" }
+					{ label: countryName15, y: totalDeaths15, color: "#333333" },
+					{ label: countryName14, y: totalDeaths14, color: "#333333" },
+					{ label: countryName13, y: totalDeaths13, color: "#333333" },
+					{ label: countryName12, y: totalDeaths12, color: "#333333" },
+					{ label: countryName11, y: totalDeaths11, color: "#333333" },
+					{ label: countryName10, y: totalDeaths10, color: "#333333" },
+					{ label: countryName9, y: totalDeaths9, color: "#333333" },
+					{ label: countryName8, y: totalDeaths8, color: "#333333" },
+					{ label: countryName7, y: totalDeaths7, color: "#333333" },
+					{ label: countryName6, y: totalDeaths6, color: "#333333" },
+					{ label: countryName5, y: totalDeaths5, color: "#333333" },
+					{ label: countryName4, y: totalDeaths4, color: "#333333" },
+					{ label: countryName3, y: totalDeaths3, color: "#333333" },
+					{ label: countryName2, y: totalDeaths2, color: "#333333" },
+					{ label: countryName1, y: totalDeaths1, color: "#333333" }
 				]
 			},			
 			]

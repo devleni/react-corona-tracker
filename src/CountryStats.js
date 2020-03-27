@@ -6,7 +6,7 @@ class CountryStats extends Component {
   render() {
     return (
       <div className="CountryStatsContainer">
-      <h2>Countries</h2>
+      <h2>By Country</h2>
         <div className="">        
           <CountryGraph />
         </div>
