@@ -20,7 +20,7 @@ class CountryGraph extends Component {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
-        "x-rapidapi-key": "8ef55b2526mshfdc06b3fd66166dp16780ejsn5c0635d72882"
+        "x-rapidapi-key": "ENTER API KEY HERE"
       }
     })
       .then(res => res.json())
@@ -30,7 +30,7 @@ class CountryGraph extends Component {
             error: null,
             isLoaded: true,
             result: this.state.result.concat(result)
-          });
+					});					
         },
         (error) => {
           this.setState({
@@ -40,7 +40,7 @@ class CountryGraph extends Component {
         }
       )
   }
-
+	
 	toggleDataSeries(e) {
 		if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 			e.dataSeries.visible = false;
@@ -50,8 +50,8 @@ class CountryGraph extends Component {
 		}
 		this.chart.render();
 	}
-
-	render() {
+	
+	render() {		
 		const { error, isLoaded, result } = this.state;
 		const countryName1 = result.map(r => r.countries_stat[0].country_name);
 		const countryName2 = result.map(r => r.countries_stat[1].country_name);
@@ -113,9 +113,8 @@ class CountryGraph extends Component {
 		const totalDeaths13 = parseInt(result.map(r => r.countries_stat[12].deaths).toString().split(",").join(""));
 		const totalDeaths14 = parseInt(result.map(r => r.countries_stat[13].deaths).toString().split(",").join(""));
 		const totalDeaths15 = parseInt(result.map(r => r.countries_stat[14].deaths).toString().split(",").join(""));
-
-		const options = {
-			height: 600,			
+		
+		const options = {						
 			animationEnabled: true,
 			theme: "light2",			
 			axisX: {
@@ -136,6 +135,7 @@ class CountryGraph extends Component {
 				type: "stackedBar",
 				name: "Active Cases",
 				showInLegend: "true",
+				legendMarkerColor: "crimson",
 				yValueFormatString: "#",
 				dataPoints: [
 					{ label: countryName15, y: activeCases15, color: "crimson" },
@@ -159,6 +159,7 @@ class CountryGraph extends Component {
 				type: "stackedBar",
 				name: "Recovered",
 				showInLegend: "true",
+				legendMarkerColor: "lightgreen",
 				yValueFormatString: "#",
 				dataPoints: [
 					{ label: countryName15, y: totalRecovered15, color: "lightgreen" },
@@ -182,6 +183,7 @@ class CountryGraph extends Component {
 				type: "stackedBar",
 				name: "Deaths",
 				showInLegend: "true",
+				legendMarkerColor: "#333333",
 				yValueFormatString: "#",
 				dataPoints: [
 					{ label: countryName15, y: totalDeaths15, color: "#333333" },
@@ -201,16 +203,22 @@ class CountryGraph extends Component {
 					{ label: countryName1, y: totalDeaths1, color: "#333333" }
 				]
 			},			
-			]
+			]			
 		}
-		return (
-		<div className="CountryDataContainer">
-			<CanvasJSChart options = {options}
-				onRef={ref => this.chart = ref}
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
-		);
+		if (error) {
+			return <div>Errir: {error.message}</div>
+		} else if (!isLoaded) {
+			return <div>Loading...</div>
+		} else {			
+			return (
+				<div className="CountryDataContainer">
+					<CanvasJSChart options = {options}
+						onRef={ref => this.chart = ref}
+					/>
+					{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+				</div>
+				);
+		}
 	}
 }
 
