@@ -20,7 +20,7 @@ class CountryGraph extends Component {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
-        "x-rapidapi-key": "8ef55b2526mshfdc06b3fd66166dp16780ejsn5c0635d72882"
+        "x-rapidapi-key": "ENTER API KEY HERE"
       }
     })
       .then(res => res.json())
