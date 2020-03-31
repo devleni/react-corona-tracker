@@ -15,10 +15,17 @@
 }
 
 .WorldDataContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  width: 80%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem; 
+  justify-content: space-between; /* 4 */
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  .WorldDataContainer {
+    width: 80%;
+    display: block;     
+  }
 }
