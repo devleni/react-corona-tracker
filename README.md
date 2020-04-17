@@ -1,1 +1,1 @@
-A web app based on React that displays current data on the Covid-19 virus.
+A web app based on React that displays current data on COVID-19.
